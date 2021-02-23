@@ -5,9 +5,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class JunitAdapterTest {
-	
-	private JunitAdapter instance; 
-	
+
+	private JunitAdapter instance;
+
 	@Before
 	public void setup() {
 		instance = new JunitAdapter();
@@ -17,6 +17,8 @@ public class JunitAdapterTest {
 	public void testPostFailure() throws Exception {
 		JSONObject request = testRecord();
 		instance.postFailure(request);
+		
+		// TODO Verify the Jesey REST API call is made and the response is validated
 	}
 
 	private JSONObject testRecord() {
