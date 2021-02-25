@@ -25,6 +25,7 @@ public class JUnitListener extends RunListener {
 				.collect(Collectors.toList());
 		log.info("Completed capturing failures");
 		failureJsons.forEach(failure -> adapter.postFailure(failure));
+		log.info("Completed pushing failures");
 	}
 
 	private JSONObject formatToJson(Failure f) {
