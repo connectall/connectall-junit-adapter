@@ -16,8 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class JUnitListener extends RunListener {
 
-	@Autowired
-	private JunitAdapter adapter;
+	private final JunitAdapter adapter = new JunitAdapter();
 
 	@Override
 	public void testRunFinished(Result result) throws Exception {

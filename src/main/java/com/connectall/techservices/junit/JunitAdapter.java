@@ -29,7 +29,7 @@ public class JunitAdapter {
 	public void postFailure(JSONObject result) {
 		final String applicationLink = config.getValue(JUnitAdapterConfig.ApplicationLink);
 		final String url = config.getValue(JUnitAdapterConfig.BaseUrl) + POST_RECORD+"?appLinkName="+applicationLink;
-		final String apiKey = config.getValue(JUnitAdapterConfig.ApiKey);
+		final String apiKey = config.getValue(JUnitAdapterConfig.ApiKey);		
 		JSONObject request = formatRequest(result);
 		WebTarget target = client.target(url);
 		Response response = target.request(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)
