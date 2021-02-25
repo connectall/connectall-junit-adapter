@@ -1,5 +1,7 @@
 package com.connectall.techservices.junit;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -7,7 +9,6 @@ import org.json.JSONObject;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 import org.junit.runner.notification.RunListener;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
@@ -40,7 +41,15 @@ public class JUnitListener extends RunListener {
 		json.put("description", description);
 		json.put("exception", exception);
 		json.put("trace", trace);
+		json.put("id", testHeader+"-"+System.currentTimeMillis());
+		json.put("modifiedDate", formattedDate());
 		return json;
+	}
+
+	private String formattedDate() {
+		final String DATE_FORMAT = "dd-MM-yyyy HH:mm:ss.SSS";
+		final SimpleDateFormat format = new SimpleDateFormat(DATE_FORMAT);
+		return format.format(new Date());
 	}
 
 }

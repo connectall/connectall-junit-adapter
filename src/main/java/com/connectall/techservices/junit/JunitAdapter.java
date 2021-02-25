@@ -43,7 +43,7 @@ public class JunitAdapter {
 		JSONObject request = new JSONObject();
 		request.put("appLinkName", applicationLink);
 		request.put("fields", result);
-		return request;
+		return result;
 	}
 
 }
