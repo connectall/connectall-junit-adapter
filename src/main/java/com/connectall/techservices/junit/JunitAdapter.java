@@ -31,9 +31,10 @@ public class JunitAdapter {
 		final String url = config.getValue(JUnitAdapterConfig.BaseUrl) + POST_RECORD+"?appLinkName="+applicationLink;
 		final String apiKey = config.getValue(JUnitAdapterConfig.ApiKey);		
 		JSONObject request = formatRequest(result);
+		log.info("Request Body {}",request);
 		WebTarget target = client.target(url);
 		Response response = target.request(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON)
-				.header("apikey", apiKey).post(Entity.json(request));
+				.header("apikey", apiKey).post(Entity.entity(request.toString(), MediaType.APPLICATION_JSON));
 		log.info("Response {}", response.getStatus());
 		log.info("Response String :{}",response.readEntity(String.class));
 	}
@@ -43,7 +44,7 @@ public class JunitAdapter {
 		JSONObject request = new JSONObject();
 		request.put("appLinkName", applicationLink);
 		request.put("fields", result);
-		return result;
+		return request;
 	}
 
 }
