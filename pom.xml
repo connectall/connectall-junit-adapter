@@ -118,6 +118,14 @@
 
 	</dependencies>
 
+	<distributionManagement>
+		<repository>
+			<id>ca.public.repo</id>
+			<name>ConnectALL Central</name>
+			<url>https://repo.connectall.com/repository/maven-ca-public</url>
+		</repository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
