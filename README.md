@@ -101,7 +101,7 @@ If your test projects are using Maven-Surefire-Plugin to run your tests, then ad
     </configuration>
 </plugin>
 ```
-Once your have your project Configured to use ConnectALL `JUnitListener`, you can now configure it to push the results to ConnectALL by creating a file named `ConnectALL.properties` in the classpath (typically `src/test/resources`).
+Once your have your project Configured to use ConnectALL `JUnitListener`, you can now configure it to push the results to ConnectALL by creating a file named `ConnectALL.properties` in the classpath (typically under `src/test/resources`).
 
 **ConnectALL.properties** file will have the below properties
 * base.url -> refers to ConnectALL Base URL Endpoint for Universal Adapter ex: http://localhost:8090
