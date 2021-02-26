@@ -32,6 +32,28 @@ JUnit test results to be pushed to an end application for creating bugs from fai
 
 ## Project Setup
 
+### Configuring dependency
+
+On your maven projects, add the below dependency and repository in your `pom.xml`
+
+```xml
+<dependency>
+  <groupId>com.connectall.techservices</groupId>
+  <artifactId>connectall-junit-adapter</artifactId>
+  <version>${connectall-junit-adapter-version}</version>
+</dependency>
+```
+
+```xml
+<repositories>
+  <repository>
+    <id>connectall-public</id>
+    <name>ConnectALL Public</name>
+    <url>https://repo.connectall.com/repository/maven-ca-public</url>
+  </repository>
+</repositories>
+```
+
 `JUnitListener` overrides `RunListener#testRunFinished` method to capture the results and push them to ConnectALL. You will need to register this listener in the `RunNotifier`. 
 
 There are two ways for your to add the listener to your JUnit tests. 
