@@ -1,4 +1,4 @@
-# connectall-junit-adapter
+# ua-junit
 JUnit test listener that acts as ConnectALL Universal adapter to report test results.
 
 ConnectALL JUnit adapter is built on top of Universal adapter configuration.
